@@ -18,6 +18,7 @@ app.add_middleware(
 # Load the model for image classification
 pipe = pipeline("image-classification", model="yangy50/garbage-classification")
 
+
 @app.post("/predict/")
 async def predict(file: UploadFile = File(...)):
     contents = await file.read()
